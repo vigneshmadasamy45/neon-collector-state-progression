@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b1b" />
+  <meta name="description" content="Neon Collector — a small neon arcade game about collecting energy orbs and avoiding hazards." />
+  <title>Neon Collector | Arcade Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Neon Collector home"><span class="brand-mark">✦</span> NEON<span class="brand-accent">COLLECTOR</span></a>
+      <span class="prototype-tag"><span class="status-dot"></span> PLAYABLE PROTOTYPE</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">ARCADE / SURVIVAL</p>
+      <h1>Collect the light.<br /><span>Outrun the dark.</span></h1>
+      <p class="intro-copy">Gather 10 energy orbs before the countdown ends. Dodge the red hazards, keep moving, and light up the arena.</p>
+    </section>
+
+    <section class="game-layout" aria-label="Game area">
+      <aside class="side-panel">
+        <div class="panel-label">MISSION BRIEF</div>
+        <div class="mission-icon">◎</div>
+        <h2>Energy run</h2>
+        <p class="muted">Your objective is simple: collect <strong>10 orbs</strong> and avoid every hazard.</p>
+        <div class="mission-stat"><span>Target</span><strong>10 ORBS</strong></div>
+        <div class="mission-stat"><span>Time limit</span><strong>30 SEC</strong></div>
+        <div class="mission-stat"><span>Threat</span><strong class="danger-text">RED HAZARDS</strong></div>
+        <div class="controls-card">
+          <div class="panel-label">CONTROLS</div>
+          <div class="key-row"><span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span><span class="key-caption">or arrow keys</span></div>
+          <p class="muted small">Move your player around the arena. Press <kbd>Space</kbd> to pause.</p>
+        </div>
+      </aside>
+
+      <div class="game-card">
+        <div class="hud">
+          <div class="hud-item"><span class="hud-label">ENERGY</span><strong><span id="score">00</span><span class="hud-divider">/</span>10</strong></div>
+          <div class="progress-wrap"><div class="progress-track"><div id="progress" class="progress-fill"></div></div><span id="progress-label">0% CHARGED</span></div>
+          <div class="hud-item timer-hud"><span class="hud-label">TIME LEFT</span><strong id="timer">30.0<span class="seconds">s</span></strong></div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="game" width="800" height="500" aria-label="Neon Collector game arena"></canvas>
+          <div id="overlay" class="overlay">
+            <div class="overlay-content">
+              <div id="overlay-icon" class="overlay-icon">✦</div>
+              <p id="overlay-kicker" class="eyebrow">READY PLAYER ONE</p>
+              <h2 id="overlay-title">Enter the arena</h2>
+              <p id="overlay-message">Collect 10 energy orbs before time runs out. Avoid the red hazards.</p>
+              <button id="main-button" class="primary-button">Start mission <span>↗</span></button>
+              <p class="overlay-hint">WASD / ARROWS TO MOVE · SPACE TO PAUSE</p>
+            </div>
+          </div>
+          <div id="pause-chip" class="pause-chip" hidden>Ⅱ PAUSED</div>
+        </div>
+
+        <div class="game-footer">
+          <span><i class="legend-dot orb-dot"></i> ENERGY ORB <span class="footer-separator">/</span> <i class="legend-dot hazard-dot"></i> HAZARD</span>
+          <span id="status-text">SYSTEM READY</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="below-grid">
+      <article class="info-card">
+        <span class="info-number">01</span>
+        <div><h3>Move with purpose</h3><p>Use WASD or the arrow keys to navigate the arena. Your player stays inside the playfield.</p></div>
+      </article>
+      <article class="info-card">
+        <span class="info-number">02</span>
+        <div><h3>Collect and charge</h3><p>Every orb adds one point and triggers a brief burst of neon particles.</p></div>
+      </article>
+      <article class="info-card">
+        <span class="info-number">03</span>
+        <div><h3>Beat the clock</h3><p>Reach 10 points before 30 seconds expire. Red hazards reset your position and cost time.</p></div>
+      </article>
+    </section>
+
+    <footer class="page-footer"><span>NEON COLLECTOR</span><span>GAME DESIGN DOCUMENT + PLAYABLE PROTOTYPE</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
