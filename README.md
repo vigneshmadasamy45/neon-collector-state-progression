@@ -6,7 +6,7 @@ A beginner-friendly neon arcade game prototype built with HTML, CSS, JavaScript,
 
 After publishing with GitHub Pages, add the live URL here:
 
-`https://YOUR-GITHUB-USERNAME.github.io/neon-collector/`
+https://github.com/vigneshmadasamy45/neon-collector-state-progression
 
 ## Game objective
 
